@@ -1,13 +1,14 @@
 require('colors');
 
 const { inquirerMenu, pausa } = require('./helpers/inquirer');
-
-console.clear();
+const Tareas = require('./models/tareas');
 
 const main = async() => {
     console.log('Hola Mundo');
 
     let opt = '';
+    const tareas = new Tareas();
+
     do {
         opt = await inquirerMenu();
         console.log({opt});
